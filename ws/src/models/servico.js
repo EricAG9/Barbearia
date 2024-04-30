@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const servico = new Schema ({
     salaoId: {
         type: mongoose.Types.ObjectId, // verifica se existe o id no banco de salao
-        ref: 'Salao' // verificando a integridade dos dados
+        ref: 'Salao', // verificando a integridade dos dados
+        required: true
     },
     titulo: {
         type: String,

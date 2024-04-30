@@ -1,0 +1,20 @@
+{
+    "version": "2012-10-10",
+    "Statament": {
+        "Sid": "Allow",
+        "Effect": "Allow",
+        "Principal": {
+            "AWS": "BUCKET-USER-ARN"
+        },
+        "Action": [
+            "s3:PutObject",
+            "s3:PutObjectAcl"
+        ],
+        "Resource": "arn:aws:s3:::[BUCKET-NAME]/*",
+        "Condition": {
+            "StringEquals": {
+                "s3:x-anz-acl": "public-read"
+            }
+        }
+    }
+}
